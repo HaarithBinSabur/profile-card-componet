@@ -1,0 +1,175 @@
+:root{
+    --clr-primary-001:hsl(185, 75%, 39%);
+    --clr-primary-002:hsl(229, 23%, 23%);
+    --clr-primary-003:hsl(227, 10%, 46%);
+
+    --clr-neutral-001:hsl(0, 0%, 59%);
+
+    --font-accent:"Kumbh Sans";
+
+    --font-light:400;
+    --font-bold:700;
+
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+body{
+    background-image:url('/profile-card-component-main/images/bg-pattern-top.svg');
+    background:var(--clr-primary-001);
+    background-position: 100%;
+    font-family: var(--font-accent);
+    font-size: 1rem;
+    display: grid;
+
+    place-content: center;
+}
+&:before {
+    position: absolute;
+    content: " ";
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-image: url("../images/bg-pattern-top.svg");
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-position: right 205%;
+  }
+
+  &:after {
+    position: absolute;
+    content: " ";
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    height: 100%;
+    background-image: url("../images/bg-pattern-bottom.svg");
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-position: left -120%;
+  }
+
+.card{
+    width: 350px;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    background: white;
+    border-radius: 0.9rem;
+    margin-top:100px ;
+   
+}
+.pattern__image{
+    border-top-right-radius :0.9rem;
+    border-top-left-radius :0.9rem;
+
+}
+
+.image__victor{
+    position: absolute;
+    top: 190px;
+    left:200px ;
+    border-radius: 60px;
+    border: 5px solid white;
+    margin: auto;
+    z-index: 1;
+
+}
+@media ( min-width:600px) {
+    .image__victor{
+        left:710px;
+        top:190px ;
+        
+    }
+}
+.image__name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+}
+
+span{
+    padding-left:10px;
+    color:var(--clr-neutral-001);
+    font-weight: var(--font-light);
+ }
+
+.image__location{
+    display: flex;
+    justify-content: space-around;
+    font-size:14px;
+    color:var(--clr-neutral-001); 
+    padding-top: 0.4rem;  
+    padding-bottom: 1.5rem;  
+}
+
+.flex__group{
+    display: flex;
+    justify-content: space-evenly;
+   
+    padding: 1rem;
+    
+}
+.card__image{
+    border-bottom:0.5px solid hsl(0, 5%, 92%);
+    
+}
+.card__bold{
+    padding-right: 30px;
+
+}
+
+.card__details{
+    font-weight: var(--font-light);
+    font-size:10px;
+    letter-spacing: 0.1rem;
+    color: var(--clr-primary-003);
+}
+
